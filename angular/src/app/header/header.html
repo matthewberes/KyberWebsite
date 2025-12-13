@@ -1,0 +1,15 @@
+<div class="container">
+    <img src="logo.png" alt="Kyber Startegy Group Logo" class="logo">
+    <button class="menu-toggle" aria-controls="main-nav" [attr.aria-expanded]="menuOpen" (click)="menuOpen = !menuOpen"
+        title="Toggle navigation">
+        <!-- <span class="sr-only">Toggle navigation</span> -->
+        <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <div id="main-nav" class="hotbar" [class.open]="menuOpen">
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            (click)="menuOpen = false">Home</a>
+        <a routerLink="/testimonials" routerLinkActive="active" (click)="menuOpen = false">Testimonials</a>
+        <a routerLink="/contact-us" routerLinkActive="active" (click)="menuOpen = false">Contact Us</a>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* allow nav to wrap below logo on small screens */
+    background-image: linear-gradient(silver, rgba(255, 255, 255, 0.411));
+}
+
+/* Screen-reader-only helper in case global project styles don't provide it */
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    margin: 20px;
+}
+
+.hotbar {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+    margin: 15px;
+}
+
+/* Mobile toggle button (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle:focus {
+    outline: 2px solid rgba(11, 116, 255, 0.14);
+}
+
+.hamburger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #222;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #222;
+}
+
+.hamburger::before {
+    top: -6px;
+}
+
+.hamburger::after {
+    top: 6px;
+}
+
+.hotbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 5px;
+    position: relative;
+    /* containing block for the vignette */
+    overflow: hidden;
+    /* keep vignette inside link */
+    display: inline-block;
+    /* ensure correct positioning */
+    transition: color 160ms ease;
+}
+
+/* Soft vignette overlay using a pseudo-element, low opacity for subtle outline */
+.hotbar a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0; */
+    pointer-events: none;
+    /* keep link clickable */
+    background: radial-gradient(circle at 50% 50%,
+            rgba(0, 0, 0, 0) 55%,
+            rgba(0, 0, 0, 0.08) 100%);
+    /* soft black vignette */
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 220ms ease, transform 220ms ease;
+    will-change: opacity, transform;
+    border-radius: inherit;
+    /* preserve any rounding if added later */
+}
+
+.hotbar a:hover::after,
+.hotbar a:focus::after {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* Keep the hover behavior accessible for keyboard users */
+.hotbar a:focus {
+    outline: 3px solid rgba(11, 116, 255, 0.12);
+    outline-offset: 2px;
+}
+
+/* Active state when the route matches */
+.hotbar a.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+/* Responsive behavior: stack and hide by default on small screens */
+@media (max-width: 640px) {
+    .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        height: 48px;
+        margin: 10px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hotbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 8px 0;
+    }
+
+    .hotbar.open {
+        display: flex;
+        animation: header-slide 180ms ease both;
+        background: #fff;
+        box-shadow: 0 8px 28px rgba(16, 24, 40, 0.06);
+        border-radius: 8px;
+        text-align: right;
+    }
+
+    .hotbar a {
+        display: block;
+        padding: 12px 10px;
+        width: 100%;
+    }
+}
+
+@keyframes header-slide {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

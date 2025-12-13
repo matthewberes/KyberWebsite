@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* make container span the viewport so footer can stick to bottom */
+}
+
+/* Ensure the app body grows to fill available space so footer sits at the end */
+.body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer stays after the body in normal flow and will be at bottom when content is short */
+app-footer {
+    flex: 0 0 auto;
+}

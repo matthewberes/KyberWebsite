@@ -1,0 +1,90 @@
+/* Footer styles */
+.app-footer {
+    background: linear-gradient(#fbfbfb, #f3f4f6);
+    border-top: 1px solid #e6e7ea;
+    color: #374151;
+    padding: 14px 14px;
+    font-size: 0.95rem;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.footer-logo {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+.company-name {
+    display: block;
+    font-weight: 700;
+}
+
+.company-year {
+    font-size: .8rem;
+    color: #6b7280;
+}
+
+.footer-nav {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+}
+
+.footer-nav a {
+    color: #374151;
+    text-decoration: none;
+    padding: 6px 4px;
+    border-radius: 4px;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+.footer-nav a.active {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.footer-meta {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-nav {
+        order: 3;
+        gap: .5rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-brand {
+        order: 1;
+        margin-bottom: .5rem;
+    }
+
+    .footer-meta {
+        order: 2;
+        margin-bottom: .25rem;
+    }
+}
