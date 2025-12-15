@@ -8,8 +8,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.css',
 })
 export class Header {
-
   // Tracks whether the mobile nav is open
   menuOpen = false;
 
+  onLogoClick() {
+    window.location.href = '/';
+  }
 }
