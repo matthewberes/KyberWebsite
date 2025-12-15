@@ -1,0 +1,44 @@
+/* Simple styling for privacy page */
+.privacy {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+    color: #111827;
+}
+
+.privacy h1 {
+    font-size: 2rem;
+    margin-bottom: .25rem;
+}
+
+.privacy h2 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+}
+
+.privacy p {
+    line-height: 1.6;
+    margin: .5rem 0;
+}
+
+.privacy ul {
+    margin-left: 1.1rem;
+}
+
+.privacy .muted {
+    color: #6b7280;
+}
+
+.privacy .small {
+    font-size: .9rem;
+}
+
+@media (max-width: 640px) {
+    .privacy {
+        margin: 1.25rem;
+    }
+
+    .privacy h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,40 @@
+/* Basic styling for Terms page */
+.terms {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+    color: #111827;
+}
+
+.terms h1 {
+    font-size: 2rem;
+    margin-bottom: .25rem;
+}
+
+.terms h2 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+}
+
+.terms p {
+    line-height: 1.6;
+    margin: .5rem 0;
+}
+
+.terms .muted {
+    color: #6b7280;
+}
+
+.terms .small {
+    font-size: .9rem;
+}
+
+@media (max-width: 640px) {
+    .terms {
+        margin: 1.25rem;
+    }
+
+    .terms h1 {
+        font-size: 1.5rem;
+    }
+}
