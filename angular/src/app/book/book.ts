@@ -22,6 +22,7 @@ export class Book {
     this.form = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      businessName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.pattern(/^\+?[0-9\s()+-]{7,25}$/)]],
       businessType: ['', Validators.required],
@@ -39,6 +40,7 @@ export class Book {
     //Send to Privyr
     const payload = {
       name: this.form.value.firstName + ' ' + this.form.value.lastName,
+      company: this.form.value.businessName,
       email: this.form.value.email,
       phone: this.form.value.phone,
       business: this.form.value.businessType,
@@ -47,9 +49,11 @@ export class Book {
 
     this.http.post(this.webhook, payload).subscribe({
       next: () => {
-        this.success = `Thanks, ${this.form.value.firstName}! We received your request.`;
+        const first = this.form.value.firstName || '';
+        const company = this.form.value.businessName || '';
+        this.success = `Thanks, ${first}${company ? ' from ' + company : ''}! We received your request.`;
         this.submitting = false;
-        this.form.reset()
+        this.form.reset();
       },
       error: err => console.error('Privyr submission failed', err)
     });;

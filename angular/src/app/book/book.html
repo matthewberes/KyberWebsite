@@ -19,6 +19,11 @@
             </label>
         </div>
 
+        <label class="field">
+            <span>Business name</span>
+            <input type="text" formControlName="businessName" required />
+        </label>
+
         <div class="row">
             <label class="field">
                 <span>Email</span>
@@ -29,7 +34,7 @@
 
             <label class="field">
                 <span>Phone</span>
-                <input type="tel" formControlName="phone" required />
+                <input type="tel" formControlName="phone" placeholder="+1 (555) 555-1234" />
                 <small class="error" *ngIf="form.controls.phone.touched && form.controls.phone.invalid">Please enter a
                     valid phone number.</small>
             </label>
