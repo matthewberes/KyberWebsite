@@ -11,6 +11,6 @@ export class Home {
   constructor(private router: Router) { }
 
   onBookConsultation() {
-    this.router.navigate(['/contact-us']);
+    this.router.navigate(['/book-consultation']);
   }
 }

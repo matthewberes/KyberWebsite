@@ -4,6 +4,7 @@ import { ContactUs } from './contact-us/contact-us';
 import { Testimonials } from './testimonials/testimonials';
 import { Privacy } from './privacy/privacy';
 import { Terms } from './terms/terms';
+import { Book } from './book/book';
 
 export const routes: Routes = [
 
@@ -24,5 +25,8 @@ export const routes: Routes = [
     },
     {
         path: 'terms', component: Terms
+    },
+    {
+        path: 'book-consultation', component: Book
     }
 ];

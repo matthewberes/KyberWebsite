@@ -1,0 +1,56 @@
+<section class="form-container container" aria-labelledby="book-heading">
+    <h1 id="book-heading">Book a Consultation</h1>
+    <p class="muted">Please provide your contact details and we'll reach out to schedule a time.</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="book-form" aria-live="polite">
+        <div class="row">
+            <label class="field">
+                <span>First name</span>
+                <input type="text" formControlName="firstName" required />
+                <small class="error" *ngIf="form.controls.firstName.touched && form.controls.firstName.invalid">First
+                    name is required.</small>
+            </label>
+
+            <label class="field">
+                <span>Last name</span>
+                <input type="text" formControlName="lastName" required />
+                <small class="error" *ngIf="form.controls.lastName.touched && form.controls.lastName.invalid">Last name
+                    is required.</small>
+            </label>
+        </div>
+
+        <div class="row">
+            <label class="field">
+                <span>Email</span>
+                <input type="email" formControlName="email" required />
+                <small class="error" *ngIf="form.controls.email.touched && form.controls.email.invalid">A valid email is
+                    required.</small>
+            </label>
+
+            <label class="field">
+                <span>Phone</span>
+                <input type="tel" formControlName="phone" required />
+                <small class="error" *ngIf="form.controls.phone.touched && form.controls.phone.invalid">Please enter a
+                    valid phone number.</small>
+            </label>
+        </div>
+
+        <label class="field">
+            <span>Business type</span>
+            <select formControlName="businessType" required>
+                <option value="" disabled selected>Select business type</option>
+                <option value="marketing">Marketing</option>
+                <option value="sales">Sales</option>
+                <option value="service">Service</option>
+            </select>
+            <small class="error" *ngIf="form.controls.businessType.touched && form.controls.businessType.invalid">Please
+                select a business type.</small>
+        </label>
+        <div class="actions">
+            <button class="submit-btn" type="submit" [disabled]="submitting || form.invalid">{{ submitting ?
+                'Sending...' : 'Submit' }}</button>
+        </div>
+
+        <div *ngIf="success" class="success" role="status">{{ success }}</div>
+    </form>
+</section>
