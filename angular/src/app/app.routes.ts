@@ -5,6 +5,7 @@ import { Testimonials } from './testimonials/testimonials';
 import { Privacy } from './privacy/privacy';
 import { Terms } from './terms/terms';
 import { Book } from './book/book';
+import { Services } from './services/services';
 
 export const routes: Routes = [
 
@@ -28,5 +29,8 @@ export const routes: Routes = [
     },
     {
         path: 'book-consultation', component: Book, title: 'Kyber Strategy Group - Book a Consultation'
+    },
+    {
+        path: 'services', component: Services, title: 'Kyber Strategy Group - Services'
     }
 ];
