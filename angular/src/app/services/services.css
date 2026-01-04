@@ -11,12 +11,6 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.price {
-    font-size: 1.25rem;
-    color: grey;
-    margin: 0.5rem;
-}
-
 button {
     position: relative;
     /* keep above overlay */
@@ -24,7 +18,7 @@ button {
     font-size: 1rem;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
-    width: 14rem;
+    width: 12rem;
     color: #fff;
     background-color: #004c26;
     border: none;
@@ -32,6 +26,7 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
 }
 
 button:hover {
