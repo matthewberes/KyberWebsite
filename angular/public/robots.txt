@@ -1,0 +1,7 @@
+# robots.txt for Kyber Strategy Group
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://kyberstrategygroup.com/sitemap.xml
