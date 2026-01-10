@@ -6,14 +6,12 @@ import { Privacy } from './privacy/privacy';
 import { Terms } from './terms/terms';
 import { Book } from './book/book';
 import { Services } from './services/services';
+import { NotFound } from './not-found/not-found';
 
 export const routes: Routes = [
 
     {
-        path: '', redirectTo: 'home', pathMatch: 'full'
-    },
-    {
-        path: 'home', component: Home, title: 'Kyber Strategy Group - Home',
+        path: '', pathMatch: 'full', component: Home, title: 'Kyber Strategy Group - Home'
     },
     {
         path: "testimonials", component: Testimonials, title: 'Kyber Strategy Group - Testimonials'
@@ -32,5 +30,8 @@ export const routes: Routes = [
     },
     {
         path: 'services', component: Services, title: 'Kyber Strategy Group - Services'
+    },
+    {
+        path: '**', component: NotFound, title: '404 - Page Not Found'
     }
 ];
