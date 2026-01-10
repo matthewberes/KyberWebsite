@@ -89,6 +89,7 @@
     display: inline-block;
     /* ensure correct positioning */
     transition: color 160ms ease;
+    border-radius: 3px;
 }
 
 /* Soft vignette overlay using a pseudo-element, low opacity for subtle outline */
