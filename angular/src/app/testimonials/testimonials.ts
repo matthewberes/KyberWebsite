@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './testimonials.css',
 })
 export class Testimonials {
-
+  reviews = [
+    {
+      name: 'K. Lowry',
+      review: 'I\'ve been working with Dylan and his team for just over a month, and I\'ve been very impressed by their work so far. The changes they\'ve implemented to my website and social media presence have had a very positive impact on sales. They work to understand my vision for my business and are very responsive to my feedback. I would highly recommend Kyber Strategy Group.',
+      rating: 5
+    }
+  ]
 }
