@@ -11,7 +11,7 @@ import { NotFound } from './not-found/not-found';
 export const routes: Routes = [
 
     {
-        path: '', pathMatch: 'full', component: Home, title: 'Kyber Strategy Group - Home'
+        path: '', pathMatch: 'full', component: Home, title: 'Kyber Strategy Group - Building Businesses Better'
     },
     {
         path: "testimonials", component: Testimonials, title: 'Kyber Strategy Group - Testimonials'
